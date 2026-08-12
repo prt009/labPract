@@ -1,8 +1,43 @@
-wife(keeran, amir).
-wife(gauri, amir).
-parent(gauri, junaid).
+male(pratyush).
+male(abhi).
+male(akshat).
 
-stepmom(M,C):-
-  wife(M,K),
-  wife(X,K),
-  parent(X,C).
+female(sami).
+female(gauri).
+female(rani).
+
+parent(pratyush,abhi).
+parent(sami,abhi).
+
+parent(abhi,akshat).
+parent(gauri,akshat).
+parent(abhi,rani).
+parent(gauri,rani).
+
+father(X,Y):-
+    male(X),
+    parent(X,Y).
+mother(X,Y):-
+    female(X),
+    parent(X,Y).
+brother(X,Y):-
+    male(X),
+    parent(P,X),
+    parent(P,Y),
+    X \= Y.
+sister(X,Y):-
+    female(X),
+    parent(P,X),
+    parent(P,Y),
+    X \= Y.
+grandparent(X,Y):-
+    parent(X,Z),
+    parent(Z,Y).    
+grandfather(X,Y):-
+    male(X),
+    grandparent(X,Y).
+grandmother(X,Y):-
+    female(X),
+    grandparent(X,Y).
+
+
