@@ -1,2 +1,7 @@
-reverse([H|T],[R]):-
-  reverse(T,[R|H]).
+reversed(L,R):-
+  reverse_ac(L,[],R).
+
+reverse_ac([],Ac,Ac).
+
+reverse_ac([H|T],Ac,R):-
+  reverse_ac(T,[H|Ac],R).
