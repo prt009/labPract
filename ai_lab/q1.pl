@@ -39,5 +39,3 @@ grandfather(X,Y):-
 grandmother(X,Y):-
     female(X),
     grandparent(X,Y).
-
-
