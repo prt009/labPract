@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 }
 
 void *runner( void *param){
-    int end= atoi(param);
+    int end= *(int *)param;
     sum=0;
     for (int i=1;i<=end;i++){
         sum+=i;
