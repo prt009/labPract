@@ -54,13 +54,13 @@ int main() {
         }
     }
     ofstream destF(dst);
-          char ch;
-          while (srcF.get(ch)) {
-              destF.put(ch);
-          }
-          cout << "File copied successfully." << endl;
-          srcF.close();
-          destF.close();
+    char ch;
+    while (srcF.get(ch)) {
+        destF.put(ch);
+    }
+    cout << "File copied successfully." << endl;
+    srcF.close();
+    destF.close();
 
     // Open source file for reading
 
