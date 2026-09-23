@@ -1,0 +1,1 @@
+mult(A,X,Y):-  A is X * Y.
