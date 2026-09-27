@@ -1,3 +1,8 @@
+gorev:-
+  write('Enter the list: '),read(L),
+  reversed(L,R),
+  write('The reversed list is: '),write(R).
+
 reversed(L,R):-
   reverse_ac(L,[],R).
 

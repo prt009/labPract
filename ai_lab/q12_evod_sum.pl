@@ -1,7 +1,7 @@
 goeos:-
-    write('enter the list: '),
-    read(L),
-    evenlen(L).
+   write('enter the list: '),
+   read(L),
+   evenlen(L).
 
 evenlen([]):-write('the list is even.'),!.
 evenlen([_]):-write('the list is odd.'),!.
