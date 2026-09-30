@@ -1,4 +1,4 @@
-gomax:-
+gomaxl:-
    write('enter the list:'),
    read(L),
    maxlist(L,M),

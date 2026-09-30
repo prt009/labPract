@@ -1,5 +1,5 @@
-go:-
-   write('enter the list: '),read(X),nl,
+gosuml:-
+   write('enter the list: '),read(X),
    sumlst(X,S),
    write('sum of the list is:'),write(S).
 
