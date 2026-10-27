@@ -8,19 +8,31 @@ struct Process{
     int ct,tat,wt;
 };
 
+void sorrt(vector<Process> p, int i = 0){
+    if (i==p.size()) return;
+    for (int j= i+1;j<p.size();j++){
+        if (p[j].at>p[i].at){
+            swap(p[i],p[j]);
+        }
+    }
+    sorrt(p, i+1);
+}
+
 int main(){
     vector<Process> p={
         {1,0,5},
         {2,2,3},
         {3,1,4}
     };
-    sort(
-        p.begin(),
-        p.end(),
-        [](Process a, Process b) {
-            return a.at < b.at;
-        }
-    );
+    // sort(
+    //     p.begin(),
+    //     p.end(),
+    //     [](Process a, Process b) {
+    //         return a.at < b.at;
+    //     }
+    // );
+    sorrt(p, 3);
+    
     int time=0;
     cout << "PID\tAT\tBT\tCT\tTAT\tWT\n";
     for(int i=0;i<p.size();i++){
