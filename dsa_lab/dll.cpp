@@ -17,12 +17,14 @@ class DLL{
    };
    Node* head;
    Node* tail;
+   int n;
    public:
    DLL(){
       head=new Node(E{});
       tail=new Node(E{});
       head->next=tail;
       tail->prev=head;
+      n=0;
    }
    ~DLL(){
       while(!empty()){
@@ -41,6 +43,7 @@ class DLL{
 
       head->next->prev=newNode;
       head->next=newNode;
+      n++;
    }
    void addBack(E data){
       Node* newNode=new Node(data);
@@ -49,6 +52,7 @@ class DLL{
 
       tail->prev->next=newNode;
       tail->prev=newNode;
+      n++;
    }
    void displayForward(){
       Node* cursor=head->next;
@@ -72,6 +76,7 @@ class DLL{
       temp->prev->next=tail;
       tail->prev=temp->prev;
       delete temp;
+      n--;
    }
    void removeFront(){
       if(empty())return;
@@ -79,6 +84,17 @@ class DLL{
       temp->next->prev=head;
       head->next=temp->next;
       delete temp;
+      n--;
+   }
+
+   const E& front() const{
+      return head->next->data;
+   }
+   const E& rear() const{
+      return tail->prev->data;
+   }
+   int size()const{
+      return n;
    }
 };
 
